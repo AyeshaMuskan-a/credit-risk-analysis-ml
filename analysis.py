@@ -181,31 +181,3 @@ print("Cleaned data is save successfully!")
 
 
 print("\nProject Completed Successfully!")
-
-
-#EXTRA PLOTS 
-# Income vs Credit Score
-plt.figure()
-sns.scatterplot(x='annual_income', y='credit_score', data=df)
-plt.title("Income vs Credit Score")
-plt.show()
-
-# Employment vs Credit Score
-plt.figure()
-sns.boxplot(x='employment_status', y='credit_score', data=df)
-plt.title("Employment vs Credit Score")
-plt.show()
-
-# Loan Amount Distribution
-plt.figure()
-sns.histplot(df['loan_application_amount'], kde=True)
-plt.title("Loan Amount Distribution")
-plt.show()
-
-
-# Violin Plot
-plt.figure()
-sns.violinplot(x='credit_risk', y='annual_income', data=df)
-plt.title("Income Distribution by Credit Risk")
-plt.show()
-
