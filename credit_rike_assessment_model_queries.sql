@@ -70,35 +70,13 @@ RANK() OVER (ORDER BY annual_income DESC) AS income_rank
 FROM credit_risk_dataset;
 
 -- Top 5 High Income Customers
-SELECT * 
-FROM credit_risk_dataset
+SELECT * FROM credit_risk_dataset
 ORDER BY annual_income DESC
 LIMIT 5;
 
 -- Running Total (Window Function)
 SELECT customer_id, annual_income,
 SUM(annual_income) OVER (ORDER BY annual_income) AS running_total
-FROM credit_risk_dataset;
-
--- Dense Rank (Credit Score)
-SELECT customer_id, credit_score,
-DENSE_RANK() OVER (ORDER BY credit_score DESC) AS score_rank
-FROM credit_risk_dataset;
-
--- Case Statement (Risk Category)
-SELECT customer_id, employment_status,annual_income,
-CASE 
-    WHEN credit_score > 700 THEN 'Low Risk'
-    WHEN credit_score BETWEEN 600 AND 700 THEN 'Medium Risk'
-    ELSE 'High Risk'
-END AS risk_category
-FROM credit_risk_dataset;
-
--- Check Null Values
-SELECT 
-    SUM(CASE WHEN age IS NULL THEN 1 ELSE 0 END) AS age_nulls,
-    SUM(CASE WHEN annual_income IS NULL THEN 1 ELSE 0 END) AS income_nulls,
-    SUM(CASE WHEN credit_score IS NULL THEN 1 ELSE 0 END) AS score_nulls
 FROM credit_risk_dataset;
 
 -- Default Rate/ RISK PERCENTAGE
