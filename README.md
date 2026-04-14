@@ -132,7 +132,7 @@ Financial institutions face challenges in identifying high-risk customers. Incor
 
 ## 📷 Dashboard Preview
 
-https://github.com/AyeshaMuskan-a/credit-risk-analysis-ml/blob/main/credit-dashboard.pbix.png
+https://github.com/AyeshaMuskan-a/credit-risk-analysis-ml/blob/main/credit_img!.png
 ---
 
 ---
